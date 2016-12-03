@@ -4,7 +4,7 @@ file_crawler_single: file_crawler_single.o libADTS.a
 	gcc $(CFLAGS) -o file_crawler_single file_crawler_single.o libADTS.a
 	
 file_crawler: file_crawler.o libADTS.a
-	gcc $(CFLAGS) -o file_crawler file_crawler.o libADTS.a
+	gcc $(CFLAGS) -o file_crawler file_crawler.o libADTS.a -lpthread
 
 libADTS.a: iterator.o linkedlist.o treeset.o re.o
 	rm -f libADTS.a

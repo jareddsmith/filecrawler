@@ -200,6 +200,7 @@ void * process() {
    /* modified from the section in f_c_single main*/
    /* predefines the while condition because of thread safe implementation */
 	char *sp;
+	int stat;
 	int cond = 1;
 	while (cond) {
 		/* locks the linked list from other threads, and blocks others if locked */
@@ -208,7 +209,7 @@ void * process() {
 		pthread_mutex_unlock(&llMutex);
 		if (cond == 0) break;
 		/* applies the reg ex on each directory */
-		int stat = applyRe(sp, reg, ts);
+		stat = applyRe(sp, reg, ts);
 		free(sp);
 		if (!stat) break;
    }
