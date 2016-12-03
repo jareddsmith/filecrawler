@@ -1,3 +1,6 @@
+/* Jared Smith 951452843 CIS 415 Extra Credit */
+/* This is my own work except that of DES 100 */
+
 #define _DEFAULT_SOURCE 1 /* enables macros to test type of directory entry */
 
 #include <sys/types.h>
@@ -196,6 +199,7 @@ static int applyRe(char *dir, RegExp *regexp, TreeSet *ts) {
    (void) closedir(dd);
    return status;
 }
+
 void * process() {
    /* modified from the section in f_c_single main*/
    /* predefines the while condition because of thread safe implementation */
